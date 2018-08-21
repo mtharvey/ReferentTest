@@ -8,6 +8,6 @@ namespace TestLib
 {
     public class TestService
     {
-        public string GetTestMessage() { return "This is in the library..."; }
+        public string GetTestMessage() { return "This is in the library... " + CoreTest.Thingy.SECRET_MESSAGE; }
     }
 }
