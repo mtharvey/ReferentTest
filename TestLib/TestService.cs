@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ThirdPartyTool;
+
 namespace TestLib
 {
     public class TestService
     {
-        public string GetTestMessage() { return "This is in the library... " + CoreTest.Thingy.SECRET_MESSAGE; }
+        public string GetTestMessage()
+        {
+            var libMessage = MessageThing.GetMessage();
+            var coreMessage = CoreTest.Thingy.SECRET_MESSAGE;
+            return $"Lib: {libMessage};  Core: {coreMessage};";
+        }
     }
 }
